@@ -36,21 +36,21 @@ public class BalanceRegister
                 + "    the amount that is actually in the register. ***\n");
         
         System.out.print("Enter the amount that should be in the register: ");
-        double dRegisterBalance = consoleInput.nextDouble();
+        double dRegisterBalance = Math.abs(consoleInput.nextDouble());
         
         CoinCounter changeInRegister = countCoins();
-        double dCoinAmount = changeInRegister.getTotal();
+        double dCoinAmount = Math.abs(changeInRegister.getTotal());
         
         System.out.println("\nAmount that should be in register: "
                 + dRegisterBalance);
         System.out.println("Value of all coins counted: "
                 + dCoinAmount);
-        if (dRegisterBalance > dCoinAmount)
+        if (Math.abs(dRegisterBalance) > Math.abs(dCoinAmount))
         {
             System.out.println("-=> You are short!");
             System.out.println("Amount: " + (dRegisterBalance - dCoinAmount));
         }
-        else if (dRegisterBalance < dCoinAmount)
+        else if (Math.abs(dRegisterBalance) < Math.abs(dCoinAmount))
         {
             System.out.println("-=> You have more money than you should!");
             System.out.println("Amount: " + (dCoinAmount - dRegisterBalance));
