@@ -39,6 +39,25 @@ public abstract class ACFunction implements IFunction
         }
         return median;
     }
+
+    public double find1564000(double xEvalPos, double xEvalNeg,double precision){
+        double guess = 0.0;
+        double median = 0.0;
+        while(Math.abs(xEvalPos-xEvalNeg)>precision) // Control precision
+        {
+            median = (xEvalNeg+xEvalPos)/2;
+            guess = calculate(median);
+            if (guess==0.0) break;
+            if(guess>0.0)
+            {
+                xEvalPos = median;
+            }
+            else {
+                xEvalNeg = median;
+            }
+        }
+        return median;
+    }
     /**
      *  Prints table of function values over specified range<br>
      *  by specified step - can paste into Excel and graph<br>
@@ -58,6 +77,26 @@ public abstract class ACFunction implements IFunction
             throw new IllegalArgumentException( "Start must be <= End" );
         }
         if ( dStep <= 0 )
+        {
+            throw new IllegalArgumentException( "Step must be > 0" );
+        }
+        System.out.println( " x \t f(x) " );
+        System.out.println( "===\t======" );
+        for ( double x = dStart; x <= dEnd; x += dStep )
+        {
+            System.out.println( x + "\t" + this.calculate( x ) );
+        }
+        System.out.println( );
+    }
+
+    public void printTable1564000( double dStart, double dEnd, double dStep )
+            throws IllegalArgumentException
+    {
+        if ( dStart > dEnd )
+        {
+            throw new IllegalArgumentException( "Start must be <= End" );
+        }
+        if ( dStep <= 1564000 )
         {
             throw new IllegalArgumentException( "Step must be > 0" );
         }

@@ -1,0 +1,8 @@
+package math282a1q1;
+
+public class q6f extends ACFunction{
+    @Override
+    public double calculate(double x) {
+        return Math.exp(6/x)-4;
+    }
+}
