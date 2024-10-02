@@ -1,6 +1,6 @@
 package math282a1q1;
 
-public class question2 {
+public class q2 {
 
 
     public static void main(String[] args) {
