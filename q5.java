@@ -18,6 +18,9 @@ public class q5 {
             System.out.printf("Using rough estimate: %.6f%n", sqrtFromEstimate);
 
 
+            double builtInSqrt = Math.sqrt(value);
+            System.out.printf("Built-in sqrt: %.6f%n", builtInSqrt);
+
             System.out.println();
         }
     }
