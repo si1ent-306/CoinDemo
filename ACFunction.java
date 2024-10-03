@@ -40,6 +40,7 @@ public abstract class ACFunction implements IFunction
         return median;
     }
 
+    //Method similar to finding zero but instead of x looking for 156400
     public double find1564000(double xEvalPos, double xEvalNeg,double precision){
         double guess = 0.0;
         double median = 0.0;
